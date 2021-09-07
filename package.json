@@ -1,0 +1,38 @@
+{
+  "name": "simple-editor",
+  "version": "1.0.0",
+  "description": "This is a rich editor base on prosemirror!",
+  "main": "src/editor.js",
+  "scripts": {
+    "build": "webpack --config build/webpack.config.js --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerryli0214/simple-editor.git"
+  },
+  "keywords": [
+    "richEditor",
+    "prosemirror"
+  ],
+  "author": "gerry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gerryli0214/simple-editor/issues"
+  },
+  "homepage": "https://github.com/gerryli0214/simple-editor#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.4",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "source-map-loader": "^3.0.0",
+    "ts-loader": "^9.2.5",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "typescript": "^4.4.2"
+  }
+}
