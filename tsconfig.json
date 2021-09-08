@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
-      "noImplicitAny": true,
-      "removeComments": true,
-      "preserveConstEnums": true,
-      "sourceMap": true,
-      "downlevelIteration": true
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node"
   },
   "include": [
-      "src/**/*"
+      "src/**/*",
+      "demo/**/*"
   ],
   "exclude": [
       "node_modules",

@@ -2,6 +2,7 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const VueLoaderPlugin = require('vue-loader')
 
 module.exports = {
   entry: "./example/src/main.ts",
@@ -15,11 +16,12 @@ module.exports = {
       static: {
         directory: path.join(__dirname, "../demo"),
       },
-      hot: true
+      hot: true,
+      watchFiles: ['example/**/*'],
   },
   module: {
       rules: [
-        { test: /\.tsx?$/, use: "ts-loader" },
+        { test: /\.tsx?$/, use: ["ts-loader", "vue-loader"] },
         { 
           test: /\.js/,
           exclude: /node_modules/,
@@ -57,7 +59,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
       ignoreOrder: true
-    }),
+    })
+    // new VueLoaderPlugin()
   ],
   optimization: {
     // runtimeChunk: 'single',
@@ -65,4 +68,10 @@ module.exports = {
       chunks: 'all'
     }
   },
+  resolve: {
+    extensions: [ '.ts', '.vue' ], // webpack 默认只会解析['.js', '.json', '.wasm']
+    fallback: {
+      "querystring": require.resolve("querystring-es3")
+    }
+  }
 };

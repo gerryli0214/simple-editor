@@ -7,7 +7,7 @@ export interface EventMap {
 }
 
 class EventEmiter {
-  private eventCenter: Array<EventMap>
+  private eventCenter: Array<EventMap> = []
 
   public on (type: string, fn: Function) {
     let currentEvent = this.eventCenter.find(vv => vv.type === type)
