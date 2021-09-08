@@ -1,5 +1,5 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 
-Vue.createApp({
+createApp({
   el: '#app'
 })

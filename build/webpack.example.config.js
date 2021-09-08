@@ -12,7 +12,9 @@ module.exports = {
   devtool: "source-map",
   devtool: 'eval-source-map',
   devServer: {
-      contentBase: path.join(__dirname, "../demo"),
+      static: {
+        directory: path.join(__dirname, "../demo"),
+      },
       hot: true
   },
   module: {
@@ -49,12 +51,18 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      filename: 'editor.html',
-      template: "./example/editor.html"
+      filename: 'index.html',
+      template: "./example/index.html"
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
       ignoreOrder: true
-  }),
-  ]
+    }),
+  ],
+  optimization: {
+    // runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
 };

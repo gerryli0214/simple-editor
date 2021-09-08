@@ -4,6 +4,7 @@
   "description": "This is a rich editor!",
   "main": "src/editor.js",
   "scripts": {
+    "dev-example": "webpack serve --config build/webpack.example.config.js --mode development",
     "build-example": "webpack --config build/webpack.example.config.js --mode production",
     "build-lib": "webpack --config build/webpack.lib.config.js --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -37,7 +38,8 @@
     "ts-loader": "^9.2.5",
     "vue-loader": "^15.9.8",
     "webpack": "^5.52.0",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.1.1"
   },
   "dependencies": {
     "prosemirror-model": "^1.14.3",
