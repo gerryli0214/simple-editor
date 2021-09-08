@@ -1,31 +1,31 @@
 /**
  * @description 发布-订阅模式
  */
-export interface eventMap {
+export interface EventMap {
   type: string,
   callback: Array<Function>
 }
 
 class EventEmiter {
-  private eventCenter: Array<eventMap>
+  private eventCenter: Array<EventMap>
 
-  on (type: string, fn: Function) {
+  public on (type: string, fn: Function) {
     let currentEvent = this.eventCenter.find(vv => vv.type === type)
     if (currentEvent) {
       currentEvent.callback.push(fn)
     }
   }
 
-  emit (type: string) {
+  public emit (type: string) {
     let currentEvent = this.eventCenter.find(vv => vv.type === type)
     if (!currentEvent) return
-    let payload: any = [...arguments].slice(1)
+    let payload: Array<any> = [...arguments].slice(1)
     currentEvent.callback.forEach(fn => {
       this.callMethodWithErrorHandler(fn, payload)
     })
   }
 
-  off (type: string, fn: Function) {
+  public off (type: string, fn: Function) {
     let currentEvent = this.eventCenter.find(vv => vv.type === type)
     if (!currentEvent) return
     let index = currentEvent.callback.findIndex(vv => vv === fn)
@@ -33,7 +33,7 @@ class EventEmiter {
     currentEvent.callback.splice(index, 1)
   }
 
-  callMethodWithErrorHandler (fn: Function, params: any) {
+  private callMethodWithErrorHandler (fn: Function, params: Array<any>) {
     try {
       fn.apply(this, params)
     } catch (error) {
