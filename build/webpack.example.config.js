@@ -2,7 +2,7 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-// const VueLoaderPlugin = require('vue-loader')
+const VueLoaderPlugin = require('vue-loader/dist/plugin').default
 
 module.exports = {
   entry: "./example/src/main.ts",
@@ -10,7 +10,6 @@ module.exports = {
     path: path.resolve(__dirname, '../demo'),
     filename: "[name].[hash].js"
   },
-  devtool: "source-map",
   devtool: 'eval-source-map',
   devServer: {
       static: {
@@ -59,8 +58,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
       ignoreOrder: true
-    })
-    // new VueLoaderPlugin()
+    }),
+    new VueLoaderPlugin()
   ],
   optimization: {
     // runtimeChunk: 'single',
@@ -69,9 +68,12 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: [ '.ts', '.vue' ], // webpack 默认只会解析['.js', '.json', '.wasm']
+    extensions: [ '.ts', '.vue', '.json', '.js' ], // webpack 默认只会解析['.js', '.json', '.wasm']
     fallback: {
-      "querystring": require.resolve("querystring-es3")
+      querystring: require.resolve("querystring-es3")
+    },
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
     }
   }
 };
