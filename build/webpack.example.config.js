@@ -20,7 +20,17 @@ module.exports = {
   },
   module: {
       rules: [
-        { test: /\.tsx?$/, use: ["ts-loader", "vue-loader"] },
+        { test: /\.tsx?$/, use: [
+            {
+              loader: 'ts-loader',
+              options: {
+                // 对应文件添加个.ts或.tsx后缀
+                configFile: path.resolve(__dirname, '../tsconfig.json'),
+                appendTsSuffixTo: [/\.vue$/],
+              }
+            }
+          ] 
+        },
         { 
           test: /\.js/,
           exclude: /node_modules/,

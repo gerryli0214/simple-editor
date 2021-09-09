@@ -4,7 +4,7 @@
   "description": "This is a rich editor!",
   "main": "src/editor.js",
   "scripts": {
-    "dev-example": "webpack serve --config build/webpack.example.config.js --mode development --stats-error-details",
+    "dev-example": "webpack serve --config build/webpack.example.config.js --mode development",
     "build-example": "webpack --config build/webpack.example.config.js --mode production",
     "build-lib": "webpack --config build/webpack.lib.config.js --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
