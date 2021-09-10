@@ -1,5 +1,5 @@
 /**
- * document指令相关
+ * @description document指令相关
  */
 class Command {
     private editor: EditorInterface

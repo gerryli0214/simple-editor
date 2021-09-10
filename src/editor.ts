@@ -49,23 +49,23 @@ class Editor extends EventEmiter implements EditorInterface{
       this.menu = new MenuBar(this)
     }
 
-    initEvent () {
+    private initEvent () {
         let pasteFun = this.options.pasteHandler || this.handlePasteEvent
         this.$el.addEventListener('paste', pasteFun.bind(this))
     }
 
-    handlePasteEvent (e) {
+    private handlePasteEvent (e) {
         e.preventDefault()
         let data = e.clipboardData.getData('text/plain')
         let result = data.split('/n').join('<br />')
         this.command.doCmd('insertHTML', result)
     }
 
-    getContent () {
+    public getContent () {
         return this.$container.innerHTML
     }
 
-    setContent (html) {
+    public setContent (html) {
         this.$container.innerHTML = html
     }
 }
