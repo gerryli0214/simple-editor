@@ -1,0 +1,37 @@
+@font-face {font-family: "rich";
+  src: url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQYAAsAAAAACFgAAAPKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDXgqDWIMpATYCJAMcCxAABCAFhD0HXxtQBxEVnNPJfiTGtim26KT5MCWLKmHeBM9T3uOfm5lo8ko7rzZX5gpC2n6thASAb+2XBy0bE1V5JM+WPPqFt8CTzS8Ip+vzf+/0tyzRaw9AGmvzGBsD6ngkYw+gLE8sMW0Yu6AlrocAhpwUR+o3bB7ioTG7CSBDBw3ohZfRoRsSBQ/BqRirkZXYeNYi6zawIvi+/EhZ8cDCVph9W/dv0JfaUZpvH9TMeCZdPQr+dBaATQIFFAc0yPxK20xU5C2Owqi/qQmBlHhYOFGaqHBUIeofnf72IY6zpWatkNKygZ70D8/CwQZxQPEJADpCnwNRGodAQ1SYQEFUgUAg6k9gQXSawIFvH87BBsAFICUQALOBUyB2eSIFhYUEhwdpfaNTJoLUGdWQD19Cnn4M6T9gSoolySfMrH2l8RMyIHxsElOsYMkzmfXUdAy1ze7ROyVlBJ1nm8VKBdbMYImooE+PQBIEXQ0pZIL06ytP34fOoV+nLFkHM9ea1IvXi8zaEAxZl2HQuo3GLM7YPhGuDT5uc6YhGzIlOwabenZQaZ/qxUVm/jV7aC/zYdOITSPx91RdN6dxjYbV+jer1+v3Dmk6Du4yr0vNFuWWr/PGeP4PXdvWaVSvVfWuP03I/U9Y9Hrzlt0a9ubXPBUy6AqZ16T98xdvYbu51/ZsvbA45M9aI2eMql2+dm/ykBG1y9VmQJd7G4ZtGP62tz9v8PTfCuql6R9QpXUx/7af9G/5RZEkmbzj5fh+V1lb9WpQLmXX5Ovs7V93TVk+OFpVr21+v9DQIWmfMx2A+IF2VCmIr6qBqirEb1TC+g2sV4r47/iJRhWD+LA6gq8RQGBhnHJOj1TVf/PuNQCvfn9VE3C6Sw5PZ6sKv09OZ/5/lurJXH/rK01o6l2tVHI43QRDd8SlCAoACzAYIAautLydTpGhczwImgwJLFyyQKHJTdOs/LAJKAwHTTkYilFpckA6eqMQ7QNFGQcgeOyARUoOQOFxkqZZF2GTkZtw8HgFA/Hrf857HqSKqcdQAkv6j6LpzdnN5W50NOENfimKZa7T7As8Y290LFk6HXhFAw8ZML/9ScSR417ppfdmKKXT4J5gZBdExnlfqn/Vi3am19UdjwwlsIT+I6LpzXleuYOLjcMb/FIUEHJhkP0FnnFIMnFkx6GB9iprjRWXGjy//QkRRzgQ3yvxsrgEWnTpxKi2JECv7AgD3OPM3qrmusp2h1DU91kHGMy5XbFEiRZbHHHF42rokmLzl+5TlFluk82CS2y4nBgh8WI0bL+dHCX+qTaxWgEAAA==') format('woff2'),
+  url('iconfont.woff?t=1607514686881') format('woff');
+}
+
+.rich {
+  font-family: "rich" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.richlujing:before {
+  content: "\e635";
+}
+
+.richjiacu:before {
+  content: "\e666";
+}
+
+.richUnderline:before {
+  content: "\e628";
+}
+
+.richxieti:before {
+  content: "\e611";
+}
+
+.richredo:before {
+  content: "\e8e1";
+}
+
+.richzitiyanse:before {
+  content: "\e6b7";
+}
+

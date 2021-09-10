@@ -16,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       { test: /\.tsx?$/, use: "ts-loader" },
-      { 
+      {
         test: /\.js/,
         exclude: /node_modules/,
         use: [
@@ -27,6 +27,14 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(jpg|png|gif|woff|woff2|svg|ttf|eot)$/,
+        use: [ 'url-loader' ]
+      },
+      {
+        test: /\.css$/,
+        use: [ 'css-loader' ]
       }
     ]
   },
@@ -34,6 +42,6 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   resolve: {
-    extensions: [ '.ts' ] // webpack 默认只会解析['.js', '.json', '.wasm']
+    extensions: [ '.ts', '.js', '.json' ] // webpack 默认只会解析['.js', '.json', '.wasm']
   }
 };

@@ -1,0 +1,40 @@
+.fly-editor{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #ccc;
+}
+
+.fly-editor .fly-editor-menubar{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #dedede;
+    line-height: 24px;
+    padding: 8px;
+}
+
+.fly-editor .fly-editor-menubar .base-icon{
+    width: 24px;
+    text-align: center;
+}
+
+.fly-editor .fly-editor-menubar .base-icon:hover{
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.fly-editor .fly-editor-content{
+    position: relative;
+    height: 100%;
+    padding: 16px;
+    overflow: auto;
+}
+
+.fly-editor .fly-editor-content:focus{
+    border: 0;
+    outline: 0;
+}
+.find{
+    background-color: #b3d4fc;
+}
