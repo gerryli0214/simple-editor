@@ -14,6 +14,14 @@ describe('Start test event-emiter function', function () {
     expect(eventEmiter.eventCenter.length).to.be(1)
     expect(eventEmiter.eventCenter[0].callback.length).to.be(0)
   })
+
+  it('should event can be fired', function () {
+    this.timeout(0)
+    eventEmiter.on('test-emit', function (params: number) {
+      expect(params).to.be(123)
+    })
+    eventEmiter.emit('test-emit', 123)
+  })
 })
 
 function testFun(msg: string) {
