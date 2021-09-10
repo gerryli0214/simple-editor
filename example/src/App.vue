@@ -6,7 +6,9 @@
 import { defineComponent } from 'vue'
 export default defineComponent({
   data () {
-    return {}
+    return {
+      a: 789
+    }
   }
 })
 </script>

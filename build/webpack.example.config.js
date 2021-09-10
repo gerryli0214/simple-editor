@@ -15,8 +15,8 @@ module.exports = {
       static: {
         directory: path.join(__dirname, "../demo"),
       },
-      hot: true,
-      watchFiles: ['example/**/*'],
+      hot: true
+      // watchFiles: ['example/**/*'],
   },
   module: {
       rules: [
@@ -81,9 +81,6 @@ module.exports = {
     extensions: [ '.ts', '.vue', '.json', '.js' ], // webpack 默认只会解析['.js', '.json', '.wasm']
     fallback: {
       querystring: require.resolve("querystring-es3")
-    },
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
     }
   }
 };
