@@ -3,6 +3,7 @@ import MenuBar from "./modules/menubar"
 import Selection from "./modules/selection"
 import Command from "./modules/command"
 import './styles/app.css'
+import { EditorInterface } from "./global"
 
 export interface editorOptions {
   el: HTMLElement,

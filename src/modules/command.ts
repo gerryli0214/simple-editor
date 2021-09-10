@@ -1,3 +1,5 @@
+import { EditorInterface } from "../global"
+
 /**
  * @description document指令相关
  */

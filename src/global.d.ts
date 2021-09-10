@@ -1,8 +1,8 @@
-// 声明全局类型
-declare type HTMLNode = HTMLElement | Node
+// 类型别名
+declare type HTMLNode = HTMLElement | Node | null
 declare type HTMLNodeList = HTMLCollection | NodeList
 
-declare interface EditorInterface {
+export declare interface EditorInterface {
   selection: any
   editable: Boolean
   $el: HTMLNode

@@ -1,3 +1,5 @@
+import { EditorInterface } from "../global"
+
 /**
  * @description 处理选区相关内容
  * 如果单页面（文本区不是iframe），mousedown需要手动保存当前选区
