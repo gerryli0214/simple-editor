@@ -7,12 +7,21 @@ export interface EventMap {
 }
 
 class EventEmiter {
-  private eventCenter: Array<EventMap> = []
+  private _eventCenter: Array<EventMap> = []
+
+  get eventCenter () {
+    return this._eventCenter
+  }
 
   public on (type: string, fn: Function) {
     let currentEvent = this.eventCenter.find(vv => vv.type === type)
     if (currentEvent) {
       currentEvent.callback.push(fn)
+    } else {
+      this.eventCenter.push({
+        type,
+        callback: [ fn ]
+      })
     }
   }
 

@@ -7,8 +7,8 @@
       "dom",
       "es2017"
     ],
-    "types": [],
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "target": "ES5" // 编译JS目标版本
   },
   "exclude": [
     "node_modules"
