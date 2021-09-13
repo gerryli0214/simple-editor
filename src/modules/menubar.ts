@@ -1,4 +1,4 @@
-import { EditorInterface } from '../global'
+import { EditorInterface } from '../types/global'
 import '../styles/fonts/iconfont.css'
 
 const ICON_MAP = {

@@ -1,12 +1,10 @@
 /**
  * @description 发布-订阅模式
  */
-export interface EventMap {
-  type: string,
-  callback: Array<Function>
-}
 
-class EventEmiter {
+import { EventEmiterInterface, EventMap } from "../types/global"
+
+class EventEmiter implements EventEmiterInterface{
   private _eventCenter: Array<EventMap> = []
 
   get eventCenter () {
@@ -23,6 +21,16 @@ class EventEmiter {
         callback: [ fn ]
       })
     }
+  }
+
+  public once (event: string, fn: Function) {
+    let self = this
+    const onceFn = function () {
+      this.off(event, onceFn)
+      fn.apply(self, arguments)
+    }
+    onceFn.fn = fn
+    this.on(event, onceFn)
   }
 
   public emit (type: string) {

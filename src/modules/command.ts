@@ -1,4 +1,4 @@
-import { EditorInterface } from "../global"
+import { EditorInterface } from "../types/global"
 
 /**
  * @description document指令相关

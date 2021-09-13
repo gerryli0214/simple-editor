@@ -3,27 +3,19 @@ import MenuBar from "./modules/menubar"
 import Selection from "./modules/selection"
 import Command from "./modules/command"
 import './styles/app.css'
-import { EditorInterface } from "./global"
-
-export interface editorOptions {
-  el: HTMLElement,
-  width?: string,
-  height?: string,
-  pasteHandler?: Function
-}
-
+import { EditorInterface, editorOptions } from "./types/global"
 class Editor extends EventEmiter implements EditorInterface{
   // 编辑器配置项
   private options: editorOptions
   // 编辑器操作栏
-  private $menuBar
   private command
   public selection
-  private menu
   // 是否可编辑
   public editable: Boolean
   public $el: HTMLElement
   public $container: HTMLElement
+  public $menuBar: any
+  public menu: MenuBar
 
   constructor ( options: editorOptions) {
     super()
