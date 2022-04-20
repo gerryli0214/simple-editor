@@ -2,6 +2,10 @@
  * @description 核心DOM操作类
  */
 
-class DOMUtils {}
+export function isTextNode (node: Node) {
+  return node.nodeType === 5
+}
 
-export default DOMUtils
+export function isNode (node: Node) {
+  return node.nodeType === 1
+}

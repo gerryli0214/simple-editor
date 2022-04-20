@@ -1,0 +1,51 @@
+/**
+ * @description 块级元素
+ */
+export enum BLOCK_ELEMENT {
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  address,
+  article,
+  aside,
+  blockquote,
+  dd,
+  dl,
+  fieldset,
+  footer,
+  form,
+  header,
+  hr,
+  ol,
+  p,
+  pre,
+  section,
+  table,
+  ul
+}
+/**
+ * @description 行内元素
+ */
+export enum INLINE_ELEMENT {
+  span,
+  i,
+  b,
+  big,
+  small,
+  em,
+  code,
+  strong,
+  a,
+  br,
+  img,
+  sub,
+  sup,
+  button,
+  input,
+  label,
+  select,
+  textarea
+}

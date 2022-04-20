@@ -3,12 +3,15 @@ import MenuBar from "./modules/menubar"
 import Selection from "./modules/selection"
 import Command from "./modules/command"
 import './styles/app.css'
-import { EditorInterface, editorOptions, EditorPlugin } from "./types/global"
+import { editorOptions, EditorPlugin } from "./types/global"
+import Observer from "./modules/observer"
+import VNode from "./modules/vNode"
 
-class Editor extends EventEmitter implements EditorInterface{
+class Editor extends EventEmitter{
   // 编辑器配置项
   private options: editorOptions
   private command
+  private _doc: VNode
   public selection
   // 是否可编辑
   public editable: Boolean
@@ -18,6 +21,8 @@ class Editor extends EventEmitter implements EditorInterface{
   public $container: HTMLElement
   // 菜单栏容器
   public $menuBar: any
+  // 监听器
+  public observer: Observer
   // 菜单数据对象
   public menu: MenuBar
   // 编辑器插件
@@ -46,6 +51,9 @@ class Editor extends EventEmitter implements EditorInterface{
       this.selection = new Selection(this)
       this.command = new Command(this)
       this.menu = new MenuBar(this)
+      this.observer = new Observer(this.$container)
+      debugger
+      this._doc = new VNode(this.$container)
     }
 
     private initEvent () {
