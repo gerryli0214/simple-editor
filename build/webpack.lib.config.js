@@ -12,7 +12,7 @@ module.exports = {
       export: 'default',
     }
   },
-  devtool: "source-map",
+  devtool: "eval-source-map",
   module: {
     rules: [
       { test: /\.tsx?$/, use: "ts-loader" },

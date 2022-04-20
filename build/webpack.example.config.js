@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, '../demo'),
     filename: "[name].[hash].js"
   },
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   devServer: {
       static: {
         directory: path.join(__dirname, "../demo"),

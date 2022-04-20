@@ -2,11 +2,12 @@
   "compilerOptions": {
     "incremental": true, // 增量编译
     "allowJs": true,
-    "lib": [
+    "lib": [ // 内置对象所对应的标准库
       "es6",
       "dom",
-      "es2017"
+      "es2017" 
     ],
+    "sourceMap": true, // 调试ts源码
     "downlevelIteration": true,
     "target": "ES5" // 编译JS目标版本
   },

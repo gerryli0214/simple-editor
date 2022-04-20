@@ -2,9 +2,9 @@
  * @description 发布-订阅模式
  */
 
-import { EventEmiterInterface, EventMap } from "../types/global"
+import { EventEmitterInterface as EventEmitterInterface, EventMap } from "../types/global"
 
-class EventEmiter implements EventEmiterInterface{
+class EventEmitter implements EventEmitterInterface{
   private _eventCenter: Array<EventMap> = []
 
   get eventCenter () {
@@ -59,4 +59,4 @@ class EventEmiter implements EventEmiterInterface{
   }
 }
 
-export default EventEmiter
+export default EventEmitter
