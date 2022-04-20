@@ -1,5 +1,15 @@
 # simple-editor
 
+## rich-editor
+
+### 概要设计
+
+- 虚拟`DOM` + `MutationObserver`，实现对`DOM`的数据抽象。
+
+### 详细设计
+
+- 111
+
 ## webpack5 + vue3 + ts框架搭建问题记录
 
 1. `webpack-dev-server`

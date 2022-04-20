@@ -4,7 +4,6 @@ import Selection from "./modules/selection"
 import Command from "./modules/command"
 import './styles/app.css'
 import { EditorInterface, editorOptions, EditorPlugin } from "./types/global"
-import PopMenu from "./plugins/pop-menu"
 
 class Editor extends EventEmitter implements EditorInterface{
   // 编辑器配置项
@@ -47,7 +46,6 @@ class Editor extends EventEmitter implements EditorInterface{
       this.selection = new Selection(this)
       this.command = new Command(this)
       this.menu = new MenuBar(this)
-      this.register(new PopMenu(this))
     }
 
     private initEvent () {
