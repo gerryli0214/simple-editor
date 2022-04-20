@@ -12,6 +12,9 @@
     "target": "ES5" // 编译JS目标版本
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "build",
+    "dist",
+    "src/styles"
   ]
 }
