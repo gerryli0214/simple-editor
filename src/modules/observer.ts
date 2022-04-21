@@ -17,12 +17,12 @@ class Observer extends EventEmitter{
 
   constructor (container: HTMLElement) {
     super()
-    this.$observer = new MutationObserver(this.observerCallback)
+    this.$observer = new MutationObserver(this.observerCallback.bind(this))
     this.$observer.observe(container, this.options)
   }
 
   private observerCallback (records: MutationRecord[], observer: MutationObserver): void {
-    console.log(records)
+    this.emit('change')
   }
 
   public disconnect (): void {

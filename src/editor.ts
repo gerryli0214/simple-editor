@@ -5,7 +5,8 @@ import Command from "./modules/command"
 import './styles/app.css'
 import { editorOptions, EditorPlugin } from "./types/global"
 import Observer from "./modules/observer"
-import VNode from "./modules/vNode"
+import VNode from "./modules/VNode/VNode"
+import Position from "./modules/position"
 
 class Editor extends EventEmitter{
   // 编辑器配置项
@@ -27,6 +28,8 @@ class Editor extends EventEmitter{
   public menu: MenuBar
   // 编辑器插件
   public plugins: Map<string, EditorPlugin> = new Map()
+  // 计算元素位置信息
+  public position: Position
 
   constructor ( options: editorOptions) {
     super()
@@ -52,13 +55,21 @@ class Editor extends EventEmitter{
       this.command = new Command(this)
       this.menu = new MenuBar(this)
       this.observer = new Observer(this.$container)
-      debugger
-      this._doc = new VNode(this.$container)
+      this.position = new Position()
+      this._doc = new VNode(this.$container, null, this.position)
     }
 
     private initEvent () {
       let pasteFun = this.options.pasteHandler || this.handlePasteEvent
       this.$el.addEventListener('paste', pasteFun.bind(this))
+
+      this.observer.on('change', this.handleContentChange.bind(this))
+    }
+
+    private handleContentChange () {
+      this.position.init()
+      let currentVNode: VNode = new VNode(this.$container, null, this.position)
+      console.log(currentVNode)
     }
 
     private handlePasteEvent (e) {

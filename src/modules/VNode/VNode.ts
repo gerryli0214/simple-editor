@@ -1,33 +1,45 @@
-import { isNode, isTextNode } from "../../utils/dom-utils"
+import { isBlockElement, isNode, isTextNode } from "../../utils/dom-utils"
+import Position from "../position"
+import VTextNode from "./VTextNode"
 
 /**
  * @description 虚拟DOM节点
  */
 class VNode {
   // 标签
-  private tag: string
+  public tag: string
   // 节点类型
-  private nodeType: number
+  public nodeType: number
   // 内容
-  private textContent: string
+  public textContent: string
   // 子节点
-  private children: Array<VNode>
+  public children: Array<VNode | VTextNode>
+  // 父节点
+  public parent: VNode = null
+  // 起始坐标
+  public start: number
+  // 结束坐标
+  public end: number
 
-  constructor (node: HTMLElement) {
-    this.tag = node.tagName
+  constructor (node: Element, parent: VNode = null, position: Position) {
+    this.tag = node.tagName.toLowerCase()
     this.nodeType = node.nodeType
     this.textContent = node.textContent
-    this.children = this.getVNodeChildren(node)
+    this.parent = parent
+    this.start = position.getEnd()
+    this.children = this.getVNodeChildren(node, position)
+    this.end = position.getEnd()
   }
 
-  getVNodeChildren(node: HTMLElement): VNode[] {
+  getVNodeChildren(node: Element, position: Position): VNode[] {
     if (isTextNode(node)) return null
     let children = []
     for (let i = 0; i < node.childNodes.length; i++) {
       let currentNode = node.childNodes[i]
       // @ts-ignore
-      if (isNode(currentNode)) children.push(new VNode(currentNode))
-      if (isTextNode(currentNode)) children.push()
+      if (isNode(currentNode)) children.push(new VNode(currentNode, this, position))
+      // @ts-ignore
+      if (isTextNode(currentNode)) children.push(new VTextNode(currentNode, this, position))
     }
     return children
   }
