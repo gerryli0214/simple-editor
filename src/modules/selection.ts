@@ -1,4 +1,4 @@
-import { EditorInterface } from "../types/global"
+import Editor from "../editor"
 
 /**
  * @description 处理选区相关内容
@@ -8,9 +8,9 @@ class Selection {
   // 保存当前选取
   _currentRange: Range = null
   // 编辑器对象
-  editor: EditorInterface = null
+  editor: Editor = null
 
-  constructor(editor: EditorInterface) {
+  constructor(editor: Editor) {
     this.editor = editor
     this._currentRange = null
   }

@@ -1,5 +1,6 @@
-import { EditorInterface } from '../types/global'
 import '../styles/fonts/iconfont.css'
+import Editor from '../editor'
+import EventEmitter from '../utils/event-emitter'
 
 const ICON_MAP = {
     'undo': {
@@ -29,19 +30,19 @@ const ICON_MAP = {
     }
 }
 
-class MenuBar {
-    private editor: EditorInterface
+class MenuBar extends EventEmitter{
+    private editor: Editor
     private selection
     private command
-    private $el: HTMLElement
+    private $el: Element
 
-    constructor(editor) {
+    constructor(editor: Editor) {
+        super()
         this.editor = editor
         this.selection = editor.selection
         this.command = editor.command
         this.$el = editor.$menuBar
         this.init()
-        return this
     }
 
     init () {

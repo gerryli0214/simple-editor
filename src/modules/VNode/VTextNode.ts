@@ -17,6 +17,8 @@ class VTextNode {
   public start: number
   // 节点结束坐标
   public end: number
+  // 真实节点，便于与选区关联
+  public __node: Text
 
   constructor (node: Text, parent: VNode = null, position: Position) {
     this.nodeType = node.nodeType
@@ -26,6 +28,7 @@ class VTextNode {
     let [ start, end ] = position.getNodePosition(this)
     this.start = start
     this.end = end
+    this.__node = node
   }
 }
 
